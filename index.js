@@ -11,7 +11,7 @@ const cors = require("cors")
 const port=process.env.PORT || 8080
 
 mongoose.Promise = global.Promise
-mongoose.connect(config.uri, (err) => {
+mongoose.connect(config.uri,{  useCreateIndex: true,useNewUrlParser: true }, (err) => {
     if (err) {
         console.log(err)
     } else {
